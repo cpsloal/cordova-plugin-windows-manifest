@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) Microsoft. All rights reserved.  
+  Licensed under the MIT license. See LICENSE file in the project root for full license information.
+-->
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-windows-manifest"
+    version="0.1.0">
+    <name>Sample plugin to modify Windows Manifest file</name>
+    <description>Visual Studio Tools for Apache Cordova - Sample plugin to modify Windows Manifest file</description>
+    <license>MIT</license>
+    <keywords>cordova,taco,visualstudio,vs,visual,studio</keywords>
+    <repo></repo>
+    <issue></issue>
+   
+    <!-- Windows packaging fixes -->
+    <platform name="windows">
+        <config-file target="package.appxmanifest" parent="/Package/Capabilities">
+            <!--<Capability Name="internetClient" />-->
+            
+            <!--
+                Provides inbound and outbound access to Intranet networks that have an authenticated domain controller,
+                or that the user has designated as either home or work networks.  Inbound access to critical ports is always blocked.
+                
+                More information: https://msdn.microsoft.com/en-us/library/windows/apps/hh464936.aspx
+                    
+                <Capability Name="privateNetworkClientServer" />
+            -->
+            <Capability Name="privateNetworkClientServer" />
+            
+            <!--<Capability Name="internetClientServer" />-->
+            <!--<Capability Name="enterpriseAuthentication" />-->
+            <!--<Capability Name="musicLibrary" />-->
+            <!--<Capability Name="picturesLibrary" />-->
+            <!--<Capability Name="sharedUserCertificates" />-->
+            <!--<Capability Name="removableStorage" />-->
+            <!--<Capability Name="videosLibrary" />-->
+            <!--<DeviceCapability Name="location" />-->
+            <!--<DeviceCapability Name="microphone" />-->
+            <!--<DeviceCapability Name="proximity" />-->
+            <!--<DeviceCapability Name="webcam" />-->
+        </config-file>
+    </platform>
+</plugin>
